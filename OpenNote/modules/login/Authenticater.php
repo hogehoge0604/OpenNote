@@ -98,8 +98,8 @@ Authenticater::sessionHeader(); //this page gets included as part of the include
 		/**
 		 * @return  - returns the full path name of this class relative to the web root
 		 */
-		public static function getPath(){			
-			return str_replace("\\", "/",str_replace(realpath($_SERVER["DOCUMENT_ROOT"]),"",realpath(dirname(__FILE__))))."/";
+		public static function getPath(){
+			return str_replace("\\", "/",str_replace(str_replace($_SERVER['SCRIPT_NAME'], '', realpath($_SERVER['SCRIPT_FILENAME'])),"",realpath(dirname(__FILE__))))."/";
 		}
 		
 		/**
